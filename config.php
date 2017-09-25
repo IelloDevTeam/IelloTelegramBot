@@ -1,10 +1,10 @@
 <?php
 
 
-// settaggio database 
+// settaggio database
 define('DATABASE_HOST','localhost');
 define('DATABASE_NAME','TelegramUsersBot');
 define('DATABASE_USERNAME','root');
-define('DATABASE_PASSWORD','andrea96');
+define('DATABASE_PASSWORD','ibanez95');
 
 ?>

@@ -38,7 +38,18 @@ if($httpCode == 200)
 				{
 					$lat = $value->message->location->latitude;
 					$long = $value->message->location->longitude;
-					$curl_api = curl_init("http://localhost:3000/parking?lat=" . $lat . "&lon=" . $long);
+					$user_id = $value->message->from->id;
+					$db_raggio = db_row_query("SELECT raggio FROM Users WHERE user_id = $user_id");
+
+					if(!$db_raggio)
+					{
+						$curl_api = curl_init("http://localhost:3000/parking?lat=" . $lat . "&lon=" . $long);
+					}
+					else {
+						$raggio = $db_raggio[0];
+						$curl_api = curl_init("http://localhost:3000/parking?lat=" . $lat . "&lon=" . $long . "&radius=" . $raggio);
+					}
+
 					curl_setopt($curl_api, CURLOPT_RETURNTRANSFER, true);
 					$result = curl_exec($curl_api);
 					$httpCode = curl_getinfo($curl_api, CURLINFO_HTTP_CODE);
@@ -47,7 +58,8 @@ if($httpCode == 200)
 					if($httpCode == 200)
 					{
 						$parking = json_decode($result);
-						//var_dump($parking);
+
+						var_dump($parking);
 						if($parking->message->parking_count > 0)
 						{
 							foreach ($parking->message->parking as $index => $value) {
@@ -65,19 +77,29 @@ if($httpCode == 200)
 							curl_close($curl_send);
 						}
 					}
-				} 
+				}
 				else if($value->message->text)
 				{
 
 					if(strpos($value->message->text,"/raggio") == 0){
 						echo ('Received /raggio command!\n');
 						// estraggo raggio
+
 						$raggio = substr($value->message->text,7);
 
-						// uso funzione di libreria che permette di eseguire query senza risultato 
-						// insert into 
-						$id = $value->message->from->id;
-						db_perform_action("REPLACE INTO Users(user_id, raggio) VALUES($id, $raggio)");
+						if($raggio > 0){
+							// uso funzione di libreria che permette di eseguire query senza risultato
+							// insert into
+							$id = $value->message->from->id;
+							db_perform_action("REPLACE INTO Users(user_id, raggio) VALUES($id, $raggio)");
+						}else{
+							$curl_send = curl_init($url_base . "sendMessage?chat_id=" . $chat_id . "&text=" . urlencode("Il raggio non può essere uguale a zero!"));
+							curl_setopt($curl_send, CURLOPT_RETURNTRANSFER, true);
+							curl_exec($curl_send);
+							curl_close($curl_send);
+							echo "Il raggio è uguale a zero!";
+						}
+
 
 
 					}
@@ -89,7 +111,7 @@ if($httpCode == 200)
 
 			}
 		}
-	} 
+	}
 	else
 	{
 		error_log("Errore");
