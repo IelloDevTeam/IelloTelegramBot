@@ -23,7 +23,7 @@ if(isset($value->message->location))
   $db_raggio = db_row_query("SELECT raggio FROM Users WHERE user_id = $user_id");
 
   // richiesta alle api IELLO.
-  $curl_api = curl_init(IELLO_PARKING_URL . "?lat=$lat&lon=$lon" . ((!$db_raggio) ? '' : "&radius=" . $db_raggio[0]));
+  $curl_api = curl_init(IELLO_PARKING_URL . "?latitude=$lat&longitude=$lon" . ((!$db_raggio) ? '' : "&radius=" . $db_raggio[0]));
   curl_setopt($curl_api, CURLOPT_RETURNTRANSFER, true);
   $result = curl_exec($curl_api);
   $httpCode = curl_getinfo($curl_api, CURLINFO_HTTP_CODE);
@@ -36,7 +36,7 @@ if(isset($value->message->location))
     {
       send_message($chat_id, "Ecco i parcheggi nelle tue vicinanze");
       foreach ($parking->message->parking as $index => $value) {
-        send_location($chat_id, $value->latitudine, $value->longitudine);
+        send_location($chat_id, $value->latitude $value->longitude);
       }
     }
     else
@@ -47,7 +47,11 @@ if(isset($value->message->location))
 }
 else if(isset($value->message->text))
 {
-  if(strpos($value->message->text, "/raggio") == 0){
+  if(strpos($value->message->text, "/start") == 0)
+  {
+    send_message($chat_id, "Benvenuto!");
+  }
+  else if(strpos($value->message->text, "/raggio") == 0){
     echo ('Received /raggio command!\n');
     // estraggo raggio
     $raggio = substr($value->message->text, 7);
