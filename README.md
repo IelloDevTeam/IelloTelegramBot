@@ -15,8 +15,9 @@ Contenuti de README:
 ## Comandi disponibili##
 
 All'interno del Bot è possibile inviare la propria posizione e poter visualizzare i parcheggi nelle vicinanze con i seguenti comandi:
-1. /raggio: restituisce le posizioni in un arco di 500m da quella inviata;
-2. /raggio {numero in metri}: restituisce le posizioni che si trovano dentro al raggio specificato dall'utente.
+
+1. utilizzando la funzionalità di Telegram di invio della posizione, il Bot restituisce le posizioni vicine in un raggio di default di 500m;
+2. /raggio {numero in metri}: imposta il raggio di ricerca a quello specificato dall'utente.
 
 Inoltre, per la memorizzazione delle preferenze degli utenti sul raggio di ricerca, è stato implementato un data base formato da una singola tabella con due
 campi: Utente e raggio. 
