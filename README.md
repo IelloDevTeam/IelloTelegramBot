@@ -18,12 +18,8 @@ All'interno del Bot è possibile inviare la propria posizione e poter visualizza
 1. /raggio: restituisce le posizioni in un arco di 500m da quella inviata;
 2. /raggio {numero in metri}: restituisce le posizioni che si trovano dentro al raggio specificato dall'utente.
 
-Inoltre, per la memorizzazione delle preferenze degli utenti sul raggio di ricerca, è stato implementato un data base formato da una singola tabella:
-| UTENTE    | RAGGIO  | 
-|-----------|---------|
-| 		    |         | 
-|           |         | 
-|           |         |
+Inoltre, per la memorizzazione delle preferenze degli utenti sul raggio di ricerca, è stato implementato un data base formato da una singola tabella con due
+campi: Utente e raggio. 
 
 ## Integrazione con Iello-Api ##
 
