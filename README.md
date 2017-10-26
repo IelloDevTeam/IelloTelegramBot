@@ -6,13 +6,13 @@ All'interno del progetto Iello, è stato implementato il seguente Bot per accede
 
 Contenuti de README: 
 
-1. Comandi disponibili;
-2. integrazione con Iello API;
-3. licenza;
-4. contatti & crediti.
+1. [Comandi disponibili](#comandi-disponibili)
+2. [Integrazione con Iello API](#integrazione-con-iello-api)
+3. [Licenza](#licenza)
+4. [Contatti & Crediti](#contatti--credits)
 
 
-## Comandi disponibili##
+## Comandi disponibili
 
 All'interno del Bot è possibile inviare la propria posizione e poter visualizzare i parcheggi nelle vicinanze con i seguenti comandi:
 
