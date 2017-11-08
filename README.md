@@ -2,7 +2,7 @@
 
 Questa repository contiene il codice del bot Telegram di Project Iello. Il bot consente agli utenti di individuare i parcheggi per disabili presenti attorno alla propria posizione, individuata tramite i servizi di localizzazione di Telegram.
 
-Il bot è stato pensato per permettere a tutti gli utenti che possono accedere a questa particolare piattaforma di consultare i dati raccolti dal progetto. Il bot è disponibile su Telegram con il nome di [ielloBot]().
+Il bot è stato pensato per permettere a tutti gli utenti che possono accedere a questa particolare piattaforma di consultare i dati raccolti dal progetto. Il bot è [disponibile su Telegram](https://web.telegram.org/#/im?p=@IelloBot) con il nome di **ielloBot**.
 
 
 ## Indice contenuti
