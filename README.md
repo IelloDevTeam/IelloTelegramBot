@@ -8,7 +8,7 @@ Il bot è stato pensato per permettere a tutti gli utenti che possono accedere a
 ## Indice contenuti
 
 * [Integrazione con IelloAPI](#integrazione-con-Ielloapi)
-* [Funzionalità del bot](#funzionalità-del-bot)
+* [Funzionalità del bot](#funzionalita-del-bot)
   * [Posteggi attorno alla propria posizione](#posteggi-attorno-alla-propria-posizione)
   * [Impostazione del raggio di ricerca](#impostazione-del-raggio-di-ricerca)
 * [Licenza](#licenza)
@@ -22,7 +22,8 @@ Il Bot sfrutta le funzioni fornite da [IelloAPI](https://github.com/IelloDevTeam
 
 ## Funzionalità del bot ##
 
-Il codice del bot è reso accessibile al pubblico grazie al Raspberri Pi di Andrea Petreti, che sfrutta il server web nginx e telegram in modalità push *todo andri*.
+Il codice del bot è reso accessibile al pubblico grazie al Raspberry Pi di Andrea Petreti, che sfrutta il server web nginx. In particolare il Bot è attivato in modalità PUSH, ovvero quando l'utente invia un messaggio sulla chat del Bot, quest'ultimo viene in realtà inviato ai server Telegram, i quali lo inoltrano ad uno script PHP presente su Raspberry Pi che elabora il contenuto del messaggio e invia una risposta pertinente. 
+Questa soluzione permette di eseguire lo script PHP solo quando realmente è necessario, contrariamente alla metodologia PULL che deve controllare periodicamente se ci sono nuovi messaggi da elaborare. Per abilitare la modalità PUSH Telegram richiede che sia presente una connessione HTTPS da parte del server sul quale lo script si trova, è stato dunque generato un certificato custom per poter abilitare HTTPS sul server web nginx.
 
 Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot.
 
