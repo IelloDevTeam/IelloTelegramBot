@@ -7,25 +7,24 @@ Il bot è stato pensato per permettere a tutti gli utenti che possono accedere a
 
 ## Indice contenuti
 
-* [Integrazione con Iello API](#Integrazione-con-IelloApi)
-* [Funzionalità del bot](#Funzionalità-del-bot)
-  * [Posteggi attorno alla propria posizione](#Posteggi-attorno-alla-propria-posizione)
-  * [Impostazione del raggio di ricerca](#Impostazione-del-raggio-di-ricerca)
+* [Integrazione con IelloAPI](#integrazione-con-Ielloapi)
+* [Funzionalità del bot](#funzionalità-del-bot)
+  * [Posteggi attorno alla propria posizione](#posteggi-attorno-alla-propria-posizione)
+  * [Impostazione del raggio di ricerca](#impostazione-del-raggio-di-ricerca)
 * [Licenza](#licenza)
-* [Contatti & Crediti](#contatti--credits)
+* [Contatti & Credits](#contatti--credits)
 
 
 ## Integrazione con IelloApi ##
 
 Il Bot sfrutta le funzioni fornite da [IelloAPI](https://github.com/IelloDevTeam/IelloAPI "Iello API Repo") per reperire i dati relativi ai parcheggi. Viene utilizzata in particolare la funzione **/parking GET**, per il download dei dati dei parcheggi attorno ad una data coordinata.
 
-<img src="Screen/workInProg.jpg" width="200px" align="left"/>
 
 ## Funzionalità del bot ##
 
 Il codice del bot è reso accessibile al pubblico grazie al Raspberri Pi di Andrea Petreti, che sfrutta il server web nginx e telegram in modalità push *todo andri*.
 
-Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot. </br></br></br>
+Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot.
 
 <img src="Screen/workInProg.jpg" width="200px" align="right"/>
 
@@ -43,7 +42,6 @@ Il bot consente inoltre di impostare il raggio di ricerca, tramite il comando **
 
 ```
 /raggio 1000
-}
 ```
 
 viene impostato il raggio di ricerca per le successive ricerche per posizione. L'intero rappresenta il raggio in metri. Peculiarità di questa funzine è che il raggio scelto viene memorizzato dal bot, come se fosse una preferenza di un'app: lato server è stato implementato un database molto semplice, formato da una singola tabella con due campi (utente e raggio), che memorizza la preferenza per i successivi utilizzi. </br></br></br>
