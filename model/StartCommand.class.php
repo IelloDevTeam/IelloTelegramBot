@@ -8,13 +8,16 @@
 
 require_once ("TelegramChainElement.class.php");
 
+/**
+ * Classe che implementa il comportamento del comando /start
+ * che viene inviato automaticamente alla connessione con il Bot
+ */
 class StartCommand extends TelegramChainElement
 {
     protected function onMessage($chatId, $userId, $value, $next)
     {
         if(isset($value->message->text))
         {
-            var_dump(strpos($value->message->text, "/start"));
             if(strpos($value->message->text, "/start") === 0)
             {
                 send_message($chatId, "Benvenuto!");

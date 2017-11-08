@@ -6,11 +6,15 @@
  * Time: 18.29
  */
 
-require_once ("ChainElement.php");
-
+require_once ("ChainElement.class.php");
+/**
+ * Classe che rappresenta un elmento di una catena, in particolare
+ * un elemento Telegram, poichè in ogni messaggio telegram sono presenti
+ * l'id della chat e l'id dell'utente è utile passare ad ogni altro elemento
+ * della catena Telegram quest'ultimi per agevolare l'invio di risposte.
+ */
 abstract class TelegramChainElement extends ChainElement
 {
-    /* Attributi sempre presenti in Telegram */
     /**
      * @var $value
      * @var $next ChainElement

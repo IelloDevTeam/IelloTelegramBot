@@ -8,9 +8,13 @@
 
 require_once ("TelegramChainElement.class.php");
 
+/**
+ * Classe che rappresenta l'elemento della catena Telegram
+ * che implementa il comportamento per il comando /radius.
+ */
 class RadiusCommand extends TelegramChainElement
 {
-    /** Risposte */
+    /** Risposte **/
     const RADIUS_SETTED = "Ok, quando vorrai richercherò parcheggi ad una distanza massima di: ";
     const RADIUS_ZERO = "Il raggio non può essere uguale a zero!";
     const RADIUS_INVALID = "Non ho capito!\nUso del comando: /raggio <distanza_in_metri>";
@@ -20,7 +24,7 @@ class RadiusCommand extends TelegramChainElement
         if(isset($value->message->text))
         {
             /* Verifico se il comando è /raggio */
-            if(strpos($value->message->text, "/raggio") == 0) {
+            if(strpos($value->message->text, "/raggio") === 0) {
 
                 /* Estrazione del raggio */
                 $raggio = substr($value->message->text, 7);
