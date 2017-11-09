@@ -6,6 +6,11 @@
  * Time: 18.20
  */
 
+/**
+ * Classe astratta che rappresenta un elemento generico
+ * di una catena generica, in particolare è un'implementazione del
+ * pattern Chain Of Responsability
+ */
 abstract class ChainElement
 {
     /**
