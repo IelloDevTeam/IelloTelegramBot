@@ -27,7 +27,7 @@ Questa soluzione permette di eseguire lo script PHP solo quando realmente è nec
 
 Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot.
 
-<img src="Screen/workInProg.jpg" width="200px" align="right"/>
+<img src="Screen/search_sd.jpg" width="200px" align="right"/>
 
 ### Posteggi attorno alla propria posizione ###
 
@@ -35,7 +35,7 @@ La principale funzione del bot è l'individuazione dei posteggi che si trovano a
 
 Le posizioni sono codificate secondo gli standard Telegram, ragion per cui cliccando sul posteggio è possibile ad esempio eseguire operazioni come l'avvio del navigatore Google Maps con destinazione tale posizione. </br></br></br>
 
-<img src="Screen/workInProg.jpg" width="200px" align="left"/>
+<img src="Screen/raggio_sd.jpg" width="200px" align="left"/>
 
 ### Impostazione del raggio di ricerca ###
 
