@@ -1,7 +1,7 @@
 <?php
-require_once("config.php");
-require_once("lib/lib_database.php");
-require_once("lib/lib_telegram.php");
+require_once ("config.php");
+require_once ("lib/lib_database.php");
+require_once ("lib/lib_telegram.php");
 require_once ("model/UnknownCommand.php");
 require_once ("model/LocationCommand.class.php");
 require_once ("model/RadiusCommand.php");
