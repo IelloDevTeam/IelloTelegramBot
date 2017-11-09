@@ -22,10 +22,13 @@ Il Bot sfrutta le funzioni fornite da [IelloAPI](https://github.com/IelloDevTeam
 
 ## Funzionalità del bot ##
 
-Il codice del bot è reso accessibile al pubblico grazie al Raspberry Pi di Andrea Petreti, che sfrutta il server web nginx. In particolare il Bot è attivato in modalità PUSH, ovvero quando l'utente invia un messaggio sulla chat del Bot, quest'ultimo viene in realtà inviato ai server Telegram, i quali lo inoltrano ad uno script PHP presente su Raspberry Pi che elabora il contenuto del messaggio e invia una risposta pertinente. 
-Questa soluzione permette di eseguire lo script PHP solo quando realmente è necessario, contrariamente alla metodologia PULL che deve controllare periodicamente se ci sono nuovi messaggi da elaborare. Per abilitare la modalità PUSH Telegram richiede che sia presente una connessione HTTPS da parte del server sul quale lo script si trova, è stato dunque generato un certificato custom per poter abilitare HTTPS sul server web nginx.
+<img src="Screen/welcome_sd.jpg" width="200px" align="left"/>
 
-Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot.
+Il codice del bot è reso accessibile al pubblico grazie al RaspberryPi di [Andrea Petreti](https://github.com/petretiandrea), nel quale è installato un [server web nginx](https://nginx.org/en/). 
+
+In particolare, il bot è attivato in modalità PUSH: quando l'utente invia un messaggio sulla chat del bot, questo viene in realtà inviato ai server Telegram, i quali lo inoltrano ad uno script PHP presente su RaspberryPi, che elabora il contenuto del messaggio e invia una risposta pertinente. Questa soluzione permette di eseguire lo script PHP solo quando realmente necessario, contrariamente alla metodologia PULL che deve controllare periodicamente se ci sono nuovi messaggi da elaborare. Per abilitare la modalità PUSH, Telegram richiede che sia presente una connessione HTTPS da parte del server, sul quale lo script si trova. È stato dunque generato un certificato custom per poter abilitare HTTPS sul server web nginx.
+
+Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot. </br>
 
 <img src="Screen/search_sd.jpg" width="200px" align="right"/>
 
