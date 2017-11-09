@@ -28,7 +28,7 @@ Il codice del bot è reso accessibile al pubblico grazie al RaspberryPi di [Andr
 
 In particolare, il bot è attivato in modalità PUSH: quando l'utente invia un messaggio sulla chat del bot, questo viene in realtà inviato ai server Telegram, i quali lo inoltrano ad uno script PHP presente su RaspberryPi, che elabora il contenuto del messaggio e invia una risposta pertinente. Questa soluzione permette di eseguire lo script PHP solo quando realmente necessario, contrariamente alla metodologia PULL che deve controllare periodicamente se ci sono nuovi messaggi da elaborare. Per abilitare la modalità PUSH, Telegram richiede che sia presente una connessione HTTPS da parte del server, sul quale lo script si trova. È stato dunque generato un certificato custom per poter abilitare HTTPS sul server web nginx.
 
-Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot. </br>
+Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato un messaggio di benvenuto, che mostra le possibili opzioni offerte da IelloBot. </br></br></br>
 
 <img src="Screen/search_sd.jpg" width="200px" align="right"/>
 
@@ -48,7 +48,7 @@ Il bot consente inoltre di impostare il raggio di ricerca, tramite il comando **
 /raggio 1000
 ```
 
-viene impostato il raggio di ricerca per le successive ricerche per posizione. L'intero rappresenta il raggio in metri. Peculiarità di questa funzine è che il raggio scelto viene memorizzato dal bot, come se fosse una preferenza di un'app: lato server è stato implementato un database molto semplice, formato da una singola tabella con due campi (utente e raggio), che memorizza la preferenza per i successivi utilizzi. </br></br></br>
+viene impostato il raggio di ricerca per le successive ricerche per posizione. L'intero rappresenta il raggio in metri. Peculiarità di questa funzine è che il raggio scelto viene memorizzato dal bot, come se fosse una preferenza di un'app: lato server è stato implementato un database molto semplice, formato da una singola tabella con due campi (utente e raggio), che memorizza la preferenza per i successivi utilizzi. </br></br></br></br>
 
 
 ## Licenza ##
