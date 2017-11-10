@@ -29,7 +29,7 @@ class StartCommand extends TelegramChainElement
         {
             if(strpos($value->message->text, "/start") === 0)
             {
-                send_message($chatId, WELCOME_MESSAGE);
+                send_message($chatId, StartCommand::WELCOME_MESSAGE);
                 return;
             }
         }
