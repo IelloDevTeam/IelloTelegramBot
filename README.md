@@ -34,7 +34,7 @@ Avviando il bot per la prima volta (tramite il comando */start*) viene mostrato 
 
 ### Posteggi attorno alla propria posizione ###
 
-La principale funzione del bot è l'individuazione dei posteggi che si trovano attorno alla posizione dell'utente. La funzionalità si basa sulla funzione di geolocalizzazione di Telegram. Inviando al bot la propria posizione (click sulla graffetta in basso a sx -> posizione), o una posizione qualunque, esso restituisce delle posizioni che rappresentano per l'appunto i posteggi che si trovano attorno a tale posizione. Di dafault il raggio di ricerca è impostato a 500 metri.
+La principale funzione del bot è l'individuazione dei posteggi che si trovano attorno alla posizione dell'utente. Quest'ultima si basa sulla funzione di geolocalizzazione di Telegram. Inviando al bot la propria posizione (click sulla graffetta in basso a sx -> posizione), o una posizione qualunque, esso restituisce delle posizioni che rappresentano per l'appunto i posteggi che si trovano attorno a tale posizione. Di dafault il raggio di ricerca è impostato a 500 metri.
 
 Le posizioni sono codificate secondo gli standard Telegram, ragion per cui cliccando sul posteggio è possibile ad esempio eseguire operazioni come l'avvio del navigatore Google Maps con destinazione tale posizione. </br></br></br>
 
@@ -76,4 +76,4 @@ SOFTWARE.
 
 
 ## Contatti & Credits ##
-App realizzata come parte di un progetto di esame (PDGT) da [Riccardo Maldini](https://github.com/maldins46), [Andrea Petreti](https://github.com/petretiandrea), [Alessia Ventani](https://github.com/AlessiaVe) e [Elia Trufelli](https://github.com/EliaT95).
+Bot realizzato come parte di un progetto di esame (PDGT) da [Riccardo Maldini](https://github.com/maldins46), [Andrea Petreti](https://github.com/petretiandrea), [Alessia Ventani](https://github.com/AlessiaVe) e [Elia Trufelli](https://github.com/EliaT95).
