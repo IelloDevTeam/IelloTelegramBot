@@ -15,8 +15,8 @@ require_once ("TelegramChainElement.class.php");
 class RadiusCommand extends TelegramChainElement
 {
     /** Risposte **/
-    const RADIUS_SETTED = "Ok, quando vorrai richercherò parcheggi ad una distanza massima di: ";
-    const RADIUS_ZERO = "Il raggio non può essere uguale a zero!";
+    const RADIUS_SETTED = "Perfetto, quando vorrai richercherò parcheggi ad una distanza massima di: ";
+    const RADIUS_ZERO = "Attento! Il raggio non può essere uguale a zero!";
     const RADIUS_INVALID = "Non ho capito!\nUso del comando: /raggio <distanza_in_metri>";
 
     protected function onMessage($chatId, $userId, $value, $next)
