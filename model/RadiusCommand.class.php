@@ -15,10 +15,10 @@ require_once ("TelegramChainElement.class.php");
 class RadiusCommand extends TelegramChainElement
 {
     /* costanti per le risposte */
-    const ERROR = \xF0\x9F\x9A\xAB;
-    const MISUNDERSTANDING = \xF0\x9F\x98\xB3;
-    const READY = \xE2\x9C\x94;
-    const CAR = \xF0\x9F\x9A\x97;
+    const ERROR = "\xF0\x9F\x9A\xAB";
+    const MISUNDERSTANDING = "\xF0\x9F\x98\xB3";
+    const READY = "\xE2\x9C\x94";
+    const CAR = "\xF0\x9F\x9A\x97";
     /** Risposte **/
     const RADIUS_SETTED = "Perfetto, quando vorrai richercherò parcheggi ad una distanza massima di: ";
     const RADIUS_ZERO = "Attento! Il raggio non può essere uguale a zero!";

@@ -12,7 +12,7 @@ class LocationCommand extends TelegramChainElement
 {
     protected function onMessage($chatId, $userId, $value, $next)
     {
-        if(isset($value->message->location))
+        if(isset($value->message->location) === True)
         {
             /* Recupero Latitudine e Longitudine */
             $lat = $value->message->location->latitude;

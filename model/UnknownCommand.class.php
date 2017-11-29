@@ -14,7 +14,7 @@ require_once ("TelegramChainElement.class.php");
  */
 class UnknownCommand extends TelegramChainElement
 {
-	const MISUNDERSTANDING = \xF0\x9F\x98\xB3;
+	const MISUNDERSTANDING = "\xF0\x9F\x98\xB3";
 	const SOS = "\xF0\x9F\x86\x98";
 
 	const MESSAGE = "Non capisco.".UnknownCommand::MISUNDERSTANDING." Digita /help per ottenere informazioni su come usarmi.".UnknownCommand::SOS;
