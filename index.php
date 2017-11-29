@@ -16,14 +16,16 @@ $value = json_decode($content);
 
 $startElement = new StartCommand();
 $radiusElement = new RadiusCommand();
+$helpElement = new HelpCommand();
 $locationElement = new LocationCommand();
 $helpElement = new HelpCommand();
 $errorElement = new UnknownCommand();
 
 $startElement->setNext($radiusElement);
-$radiusElement->setNext($locationElement);
-$locationElement->setNext($helpElement);
-$helpElement->setNext($errorElement);
+
+$radiusElement->setNext($helpElement);
+$helpElement->setNext($locationElement);
+$locationElement->setNext($errorElement);
 
 $startElement->handleValue($value);
 
