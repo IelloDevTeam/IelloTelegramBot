@@ -17,9 +17,11 @@ class BetCommand extends TelegramChainElement
     const BALL = "\xE2\x9A\xBD";
     const UNDERAGE = "\xF0\x9F\x94\x9E";
     const HAND = "\xF0\x9F\x91\x90";
-    const BET_MESSAGE = "Vedo che abbiamo un nuovo scommettitore!". BetCommand::UNDERAGE." clicca il link che hai appena ricevuto e vedrai che non ti pentirai".BetCommand::BALL. BetCommand::HAND."\nnhttps://play.google.com/store/apps/details?id=com.maldini.riccardo.betassist";
+
+    const BET_MESSAGE = "Vedo che abbiamo un nuovo scommettitore!". BetCommand::UNDERAGE." Clicca il link che hai appena ricevuto e vedrai che non ti pentirai".BetCommand::BALL. BetCommand::HAND."\nhttps://play.google.com/store/apps/details?id=com.maldini.riccardo.betassist";
 
     protected function onMessage($chatId, $userId, $value, $next)
+    {
         if(isset($value->message->text))
         {
             if(strpos($value->message->text, "/gol") === 0)
@@ -31,4 +33,3 @@ class BetCommand extends TelegramChainElement
         $this->handleNext($value);
     }
 }
-

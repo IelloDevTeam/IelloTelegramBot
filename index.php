@@ -9,9 +9,15 @@ require_once ("model/StartCommand.class.php");
 require_once ("model/HelpCommand.class.php");
 require_once ("model/BetCommand.php");
 require_once ("model/IelloCommand.php");
+
 // lettura body http trasmesso da server telegram
 $content = file_get_contents("php://input");
 
+/*$content = '{"update_id":68598512,
+"message":{"message_id":1107,"from":{"id":337879368,"is_bot":false,"first_name":"Andrea","username":"andrea9671","language_code":"it"},"chat":{"id":337879368,"first_name":"Andrea","username":"andrea9671","type":"private"},"date":1511977865,"location":{"latitude":43.718835,"longitude":12.866447}}}';*/
+
+/*$content = '{"update_id":68598514,
+"message":{"message_id":1110,"from":{"id":337879368,"is_bot":false,"first_name":"Andrea","username":"andrea9671","language_code":"it"},"chat":{"id":337879368,"first_name":"Andrea","username":"andrea9671","type":"private"},"date":1511978338,"text":"/raggio 0","entities":[{"offset":0,"length":6,"type":"bot_command"}]}}';*/
 // decodifica del body testuale in json
 $value = json_decode($content);
 
@@ -28,9 +34,9 @@ $startElement->setNext($radiusElement);
 
 $radiusElement->setNext($helpElement);
 $helpElement->setNext($locationElement);
-$locationElement->setNext($errorElement);
-$errorElement->setNext($betElement);
+$locationElement->setNext($betElement);
 $betElement->setNext($ielloElement);
+$ielloElement->setNext($errorElement);
 
 $startElement->handleValue($value);
 
