@@ -19,10 +19,11 @@ class RadiusCommand extends TelegramChainElement
     const MISUNDERSTANDING = "\xF0\x9F\x98\xB3";
     const READY = "\xE2\x9C\x94";
     const CAR = "\xF0\x9F\x9A\x97";
+
     /** Risposte **/
-    const RADIUS_SETTED = "Perfetto, quando vorrai richercherò parcheggi ad una distanza massima di: ";
-    const RADIUS_ZERO = "Attento! Il raggio non può essere uguale a zero!";
-    const RADIUS_INVALID = "Non ho capito!\nUso del comando: /raggio <distanza_in_metri>";
+    const RADIUS_SETTED = RadiusCommand::READY . " Perfetto, quando vorrai richercherò parcheggi ad una distanza massima di: ";
+    const RADIUS_ZERO = "Attento! " . RadiusCommand::ERROR . " Il raggio non può essere zero!";
+    const RADIUS_INVALID = RadiusCommand::MISUNDERSTANDING . " Non ho capito!\nUso del comando: /raggio <distanza_in_metri>";
 
 
     protected function onMessage($chatId, $userId, $value, $next)
@@ -39,7 +40,7 @@ class RadiusCommand extends TelegramChainElement
                 if ($raggio && !empty($raggio) && is_numeric($raggio)) {
                     if ($raggio > 0) {
                         db_perform_action("REPLACE INTO Users(user_id, raggio) VALUES($userId, $raggio)");
-                        send_message($chatId, RadiusCommand::RADIUS_SETTED. $raggio . "m");
+                        send_message($chatId, RadiusCommand::RADIUS_SETTED . $raggio . "m " . RadiusCommand::CAR);
                         return;
                     } else {
                         send_message($chatId, RadiusCommand::RADIUS_ZERO);

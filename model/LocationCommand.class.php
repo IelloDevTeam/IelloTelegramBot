@@ -10,9 +10,20 @@ require_once ("TelegramChainElement.class.php");
 
 class LocationCommand extends TelegramChainElement
 {
+    const WHEEL_CHAIR = "\xE2\x99\xBF";
+    const PARK = "\xF0\x9F\x85\xBF";
+    const CAR = "\xF0\x9F\x9A\x97";
+    const SAD = "\xF0\x9F\x98\x9E";
+    const CRY = "\xF0\x9F\x98\xA2";
+
+    const FOUND_PARK_MESSAGE = "Ecco i parcheggi nelle tua vicinanze " . LocationCommand::CAR . LocationCommand::PARK . LocationCommand::WHEEL_CHAIR;
+    const NOT_FOUND_PARK_MESSAGE = "Non ho trovato nessun parcheggio nelle tue vicinanze " . LocationCommand::SAD;
+    const ERROR_API = "Mi dispiace credo di avere un piccolo problema a contattare il mio database. " . LocationCommand::SAD . LocationCommand::CRY; 
+
     protected function onMessage($chatId, $userId, $value, $next)
     {
-        if(isset($value->message->location) === True)
+
+        if(isset($value->message->location))
         {
             /* Recupero Latitudine e Longitudine */
             $lat = $value->message->location->latitude;
@@ -28,12 +39,13 @@ class LocationCommand extends TelegramChainElement
             $httpCode = curl_getinfo($curl_api, CURLINFO_HTTP_CODE);
             curl_close($curl_api);
 
+
             if($httpCode == 200)
             {
                 $parking = json_decode($result);
                 if($parking->message->parking_count > 0)
                 {
-                    send_message($chatId, "Ecco i parcheggi nelle tue vicinanze");
+                    send_message($chatId, LocationCommand::FOUND_PARK_MESSAGE);
                     foreach ($parking->message->parking as $index => $value) {
                         send_location($chatId, $value->latitude, $value->longitude);
                     }
@@ -41,11 +53,16 @@ class LocationCommand extends TelegramChainElement
                 }
                 else
                 {
-                    send_message($chatId, "Non ho trovato nessun parcheggio nelle tue vicinanze");
+                    send_message($chatId, LocationCommand::NOT_FOUND_PARK_MESSAGE);
                     return;
                 }
             }
+            else
+            {
+                send_message($chatId, LocationCommand::ERROR_API);
+                return;
+            }
         }
-        $this->handleNext($next);
+        $this->handleNext($value);
     }
 }

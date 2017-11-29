@@ -21,6 +21,7 @@ class IelloCommand extends TelegramChainElement
     const IELLO_MESSAGE = "Loro sono i miei creatori ".IelloCommand::RIGHT_HAND."Riccardo Maldini - Andrea Petreti - Alessia Ventani - Elia Trufelli.\nSe vuoi maggiori informazioni sul progetto Iello visita la nostra pagina GitHub ".IelloCommand::CAT." https://github.com/IelloDevTeam.\nSai io ho un fratello maggiore che fa al caso tuo, se vuoi conoscerlo ti lascio questo link ".IelloCommand::FACE." https://play.google.com/store/apps/details?id=com.projectiello.teampiattaforme.iello";
 
     protected function onMessage($chatId, $userId, $value, $next)
+    {
         if(isset($value->message->text))
         {
             if(strpos($value->message->text, "/iello") === 0)
