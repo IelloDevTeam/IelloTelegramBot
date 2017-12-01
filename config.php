@@ -3,11 +3,11 @@
 
 // settaggio database
 define('DATABASE_HOST','localhost');
-define('DATABASE_NAME','TelegramUsersBot');
-define('DATABASE_USERNAME','root');
-define('DATABASE_PASSWORD','andrea96');
+define('DATABASE_NAME','...');
+define('DATABASE_USERNAME','...');
+define('DATABASE_PASSWORD','...');
 
-define('TELEGRAM_BOT_TOKEN', '404016358:AAFY5DagRE798jch-LLZRPOTXU4IXKj_Klw');
+define('TELEGRAM_BOT_TOKEN', '...');
 define('TELEGRAM_BASE_URL', 'https://api.telegram.org/bot');
 define('TELEGRAM_URL', TELEGRAM_BASE_URL . TELEGRAM_BOT_TOKEN);
 define('TELEGRAM_URL_SEND_MESSAGE', TELEGRAM_URL . "/sendMessage");
